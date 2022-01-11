@@ -1,0 +1,10 @@
+.tabs{
+    text-decoration: none;
+    color: aliceblue;
+    margin-right: 20px;
+    font-size: 20px;
+    
+}
+.tabs:hover{
+    color: brown;
+}

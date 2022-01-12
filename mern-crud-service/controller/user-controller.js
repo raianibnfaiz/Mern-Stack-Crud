@@ -30,3 +30,23 @@ export const getUserById= async(request,response)=>{
         response.json({message:error.message})
     }
 }
+export const editUser= async(request,response)=>{
+        const user=request.body;
+        const editedUser=new User(user);
+
+    try{
+        await User.updateOne({_id:request.params.id},editedUser)
+        response.json(editedUser)
+    }catch(error){
+        response.json({message:error.message});
+    }
+}
+export const deleteUser= async(request,response)=>{
+    
+    try{
+        await User.deleteOne({_id:request.params.id})
+        response.json("user is deleted")
+    }catch(error){
+        response.json({message:error.message})
+    }
+}

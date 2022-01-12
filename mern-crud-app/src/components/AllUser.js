@@ -57,14 +57,14 @@ const AllUser = () => {
             <TableBody>
                 {users.map((user) => (
                     <TableRow className={classes.row} key={user._id}>
-                        <TableCell>{user.id}</TableCell>
+                        <TableCell>{user._id}</TableCell>
                         <TableCell>{user.name}</TableCell>
                         <TableCell>{user.username}</TableCell>
                         <TableCell>{user.email}</TableCell>
                         <TableCell>{user.phone}</TableCell>
                         <TableCell>
-                            <Button variant="contained" component={Link} to={`/edit/${user.id}`}>Edit</Button>
-                            <Button variant="contained" onClick={()=>deleteSelectedUser(user.id)}>Delete</Button>
+                            <Button variant="contained" component={Link} to={`/edit/${user._id}`}>Edit</Button>
+                            <Button variant="contained" onClick={()=>deleteSelectedUser(user._id)}>Delete</Button>
                         </TableCell>
                         
                     </TableRow>

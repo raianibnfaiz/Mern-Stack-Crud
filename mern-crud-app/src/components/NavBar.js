@@ -3,19 +3,47 @@ import './NavBar.css';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Navbar';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import {Button } from '@material-ui/core'
 
 const NavBar = () => {
     return (
-        <Navbar bg="dark" variant="dark">
-            <Container>
-                <Navbar.Brand href="/">Employee's Information</Navbar.Brand>
-                <Nav className="me-auto">
-                    <NavLink className="tabs" to='/all'>All User</NavLink>
-                    <NavLink className="tabs" to='/add'>Add User</NavLink>
-                </Nav>
-            </Container>
-        </Navbar>
+        <div className="top">
+            <div className="topLeft">
+                <li className="topListItem">  
+                    <Link className="link" to="/">
+                        User's Information
+                    </Link>
+                </li>
+            </div>
+            <div className="topCenter">
+            <ul className="topList">
+                <li className="topListItem">
+                    <Button  variant="contained">
+                        <Link className="link" to="/all">
+                            All User
+                        </Link>
+                    </Button>
+                </li>
+                <li className="topListItem">
+                    <Button  variant="contained">
+                        <Link className="link" to="/add">
+                            Add User
+                        </Link>
+                    </Button>
+                </li>
+
+            </ul>
+            </div>
+            <div className="topRight">
+                <ul className="topList">
+                    <li>
+                        MERN CRUD 
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
     );
 };
 

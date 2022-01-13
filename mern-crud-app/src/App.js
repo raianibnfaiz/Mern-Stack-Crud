@@ -20,7 +20,7 @@ function App() {
       <NavBar/>
       <Switch>
           <Route exact path="/">
-            <Home />
+            <AllUser />
           </Route>
           <Route path="/all">
             <AllUser />

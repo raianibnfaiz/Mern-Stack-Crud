@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { deleteUser, getUsers } from '../Service/api';
-import { Table, TableHead, TableCell, Paper, TableRow, TableBody, Button, makeStyles } from '@material-ui/core'
+import { Table, TableHead, TableCell, TableRow, TableBody, Button, makeStyles } from '@material-ui/core'
 import { Link } from 'react-router-dom';
 const useStyles = makeStyles({
     table: {
@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     thead: {
         '& > *': {
             fontSize: 20,
-            background: '#000000',
+            background: 'gray',
             color: '#FFFFFF'
         }
     },
@@ -64,7 +64,7 @@ const AllUser = () => {
                         <TableCell>{user.phone}</TableCell>
                         <TableCell>
                             <Button variant="contained" component={Link} to={`/edit/${user._id}`}>Edit</Button>
-                            <Button variant="contained" onClick={()=>deleteSelectedUser(user._id)}>Delete</Button>
+                            <Button style={{marginLeft:"10px"}} variant="contained" onClick={()=>deleteSelectedUser(user._id)}>Delete</Button>
                         </TableCell>
                         
                     </TableRow>
